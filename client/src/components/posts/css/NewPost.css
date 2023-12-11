@@ -1,0 +1,53 @@
+.NewPost {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 3px solid rgb(124, 124, 124);
+  border-radius: 20px;
+  padding: 15px 20px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 10px rgb(130, 130, 130);
+  background-color: rgba(120, 77, 41, 0.2);
+}
+.NewPost h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(130, 130, 130);
+}
+.NewPost .postName {
+  outline: none;
+  border: none;
+  padding: 8px 5px 3px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(84, 124, 41);
+  background-color: white;
+  border-radius: 20px;
+  width: 90%;
+  text-decoration: underline;
+}
+.NewPost .postName::placeholder {
+  font-size: 20px;
+}
+.NewPost h2 {
+  margin-left: 20px;
+}
+.NewPost textarea {
+  height: 100px;
+  padding: 10px;
+  font-size: 17px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+}
+.NewPost .submit-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px 0 30px;
+}
+.NewPost .submit-box p {
+  font-weight: bold;
+}
+.NewPost input[type="submit"] {
+  width: min-content;
+}

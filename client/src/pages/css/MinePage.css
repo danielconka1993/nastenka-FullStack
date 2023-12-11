@@ -1,0 +1,12 @@
+.MinePage{
+    display: flex;
+    justify-content: center;
+    width: clamp(700px, 96%, 1300px);
+    margin-top: 20px;
+}
+
+@media(max-width: 800px){
+    .MinePage{
+        width: 90%;
+    }
+}

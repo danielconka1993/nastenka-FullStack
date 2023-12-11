@@ -1,0 +1,67 @@
+.OnePost-box {
+  width: clamp(700px, 96%, 1366px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.OnePost-box .linkHome {
+  margin: 15px 0 0px 0;
+}
+
+.OnePost {
+  border: 3px solid rgb(124, 124, 124);
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.OnePost .AutorDetails {
+  position: absolute;
+}
+
+.OnePost .wholeText {
+  font-size: 20px;
+  margin: 20px 0 5px 0;
+}
+/* Comments */
+.commentsBox {
+  margin: 25px 0;
+}
+.commentsBox h3 {
+  margin: 25px 0 10px 0;
+}
+
+/* One Comment */
+.oneComment {
+  border: 2px solid rgb(124, 124, 124);
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(130, 130, 130);
+  background-color: aliceblue;
+}
+.oneComment p:nth-child(1) {
+  font-size: 20px;
+  font-weight: bold;
+}
+.oneComment p:nth-child(2) {
+  margin-left: 10px;
+  font-size: 15px;
+  font-style: italic;
+  color: rgb(166, 166, 167);
+}
+.oneComment p:nth-child(3) {
+  margin-top: 15px;
+}
+.OnePost .NoExist{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 800px) {
+  .OnePost {
+    width: 90%;
+  }
+}

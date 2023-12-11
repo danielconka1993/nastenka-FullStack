@@ -1,0 +1,54 @@
+.NewComment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 3px solid rgb(124, 124, 124);
+  border-radius: 20px;
+  padding: 15px 20px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 10px rgb(130, 130, 130);
+  background-color: rgba(41, 120, 81, 0.2);
+}
+.NewComment h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(130, 130, 130);
+}
+.NewComment .commentName {
+  outline: none;
+  border: none;
+  padding: 8px 5px 3px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(84, 124, 41);
+  background-color: white;
+  border-radius: 20px;
+  width: 90%;
+  text-decoration: underline;
+}
+.NewComment .commentName::placeholder {
+  font-size: 20px;
+}
+.NewComment h2 {
+  margin-left: 20px;
+}
+.NewComment textarea {
+  height: 60px;
+  padding: 10px;
+  font-size: 17px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+}
+.NewComment .submit-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px 0 30px;
+}
+.NewComment .submit-box p {
+  font-weight: bold;
+}
+.NewComment input[type="submit"] {
+  width: min-content;
+}

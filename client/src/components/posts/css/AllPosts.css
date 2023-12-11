@@ -1,0 +1,39 @@
+.AllPosts {
+  flex-direction: column-reverse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+}
+.AllPosts .BackendPosts {
+  width: 100%;
+}
+.AllPosts .onePost-mini {
+  width: 100%;
+  border: 3px solid rgb(124, 124, 124);
+  margin-bottom: 30px;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(130, 130, 130);
+}
+.AllPosts .onePost-mini:hover {
+  box-shadow: 0 0 15px rgb(155, 182, 59);
+}
+.AllPosts h1 {
+  text-decoration: none;
+}
+.AllPosts h2 {
+  text-decoration: none;
+}
+
+/* Click - More info post */
+.AllPosts .onePost-mini .moreInfo-post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.active {
+  background-color: rgba(155, 182, 59, 0.2);
+}

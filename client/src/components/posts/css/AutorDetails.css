@@ -1,0 +1,15 @@
+.AutorDetails {
+  border: 1px solid black;
+  width: min-content;
+  background-color: rgb(68, 68, 68);
+  color: aliceblue;
+  padding: 2px;
+  font-size: 15px;
+}
+.AutorDetails p {
+  white-space: nowrap;
+}
+.AutorDetails .title {
+  text-decoration: underline;
+  margin-top: 5px;
+}
