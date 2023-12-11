@@ -105,7 +105,7 @@ const FormLogin = () => {
   };
 
   const closeForm = () => {
-    loginOK(true);
+    loginOK(false);
     loginForm(false);
   };
   // -----------------------------------------------
