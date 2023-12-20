@@ -19,5 +19,5 @@ const postModel = new mongoose.Schema({
     require: true,
   },
 });
-
+//posts - určuje jméno kolekce
 module.exports = mongoose.model("posts", postModel);

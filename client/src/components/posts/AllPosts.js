@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import NewPost from "./NewPost";
 import NewComment from "./NewComment";
 import GetComments from "./GetComments";
+import DeletePost from "./DeletePost";
+import EditPost from "./editPost/EditPost";
 
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -12,9 +14,12 @@ const AllPosts = () => {
   const [showMoreDetails, setShowMoreDetails] = useState({});
   const [showMoreDetails2, setShowMoreDetails2] = useState({});
   const [comments, setComments] = useState([]);
-  const [isLog, setIsLog] = useState(false); // for login
+  const [isLog, setIsLog] = useState("false"); // for login
 
-  const { login } = useContext(GlobalContext);
+  const [editPost, setEditPost] = useState("") // editovat POst
+  
+
+  const { login, loginEmail } = useContext(GlobalContext);
 
   // fetch --------------------------------
 
@@ -113,6 +118,17 @@ const AllPosts = () => {
     }));
   };
 
+  // postEdit Show
+  const editPostShow = (postID) => {
+    // Když není || jiný objekt edit
+    if(!editPost || editPost !== postID){
+      setEditPost(postID)
+    } 
+    else{
+      setEditPost("")
+    }
+  }
+
   //-------------------------------------------------
 
   return (
@@ -185,15 +201,31 @@ const AllPosts = () => {
                     <Link to={`/${onePost2._id}`}>
                       <h1>{onePost2.postName}</h1>
                     </Link>
-                    <h2>{onePost2.autorName}</h2>
-                    <p>
-                      {showMoreDetails2[onePost2._id]
-                        ? onePost2.postText
-                        : onePost2.postText.length > 70
-                        ? `${onePost2.postText.substring(0, 70)}...`
-                        : onePost2.postText}
-                    </p>
+                    {/* delete POST */}
+                    {onePost2.autorEmail === loginEmail ? <DeletePost postID={onePost2._id} loginEmail={loginEmail} /> : ""}
 
+                    {/* Edit POST */}
+                    {onePost2.autorEmail === loginEmail ? <button onClick={() => editPostShow(onePost2._id)}>Upravit Článek</button> : ""}
+
+                    {
+                      editPost === onePost2._id && <>
+                        <EditPost postName={onePost2.postName} postText={onePost2.postText} autorEmail={onePost2.autorEmail} _id={onePost2._id}  />
+                      </>
+                    }
+                    {
+                      editPost !== onePost2._id && <>
+                        <p>{onePost2.autorEmail}</p>
+                        <h2>{onePost2.autorName}</h2>
+                        <p>
+                          {showMoreDetails2[onePost2._id]
+                            ? onePost2.postText
+                            : onePost2.postText.length > 70
+                            ? `${onePost2.postText.substring(0, 70)}...`
+                            : onePost2.postText}
+                        </p>
+                      </>
+                    }
+                    
                     {/* If ShowMore */}
                     <div>
                       {showMoreDetails2[onePost2._id] && (

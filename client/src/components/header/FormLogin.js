@@ -60,7 +60,7 @@ const FormLogin = () => {
       setError("Vyplňte přihlašovací udaje");
       return;
     } else {
-      fetch("http://localhost:5000/login", {
+      fetch("http://localhost:5000/loginHash", {
         method: "post",
         headers: {
           Accept: "application/json",
@@ -84,7 +84,9 @@ const FormLogin = () => {
               email: finalData.user[0].email,
               name: finalData.user[0].name,
               expiration: expirationTime,
+              token: finalData.token, // Přidáme token do objektu userData
             };
+            console.log(userData.token)
             localStorage.setItem("userData", JSON.stringify(userData));
 
             setError("Přihlášení dokončeno");
@@ -104,7 +106,7 @@ const FormLogin = () => {
     }
   };
 
-  const closeForm = () => {
+  const closeForm = () => { // Zavření btn
     loginOK(false);
     loginForm(false);
   };

@@ -90,7 +90,7 @@ const FormRegistration = () => {
       setError("Hesla se neschodují");
       return;
     } else {
-      fetch("http://localhost:5000/save-registration", {
+      fetch("http://localhost:5000/signupHash", {
         method: "post",
         headers: {
           Accept: "application/json",

@@ -1,5 +1,4 @@
-const express = require("express");
-const loginData = express.Router();
+const loginData = require("express").Router();
 const UserModel = require("../../models/user");
 
 loginData.post("/login", async (req, res) => {
@@ -11,9 +10,11 @@ loginData.post("/login", async (req, res) => {
 
     if (user) {
       // Vrátíme úspěšnou odpověď
-      res
-        .status(200)
-        .json({ msg: "Přihlášení úspěšné", user: [user], success: true });
+      res.status(200).json({ 
+        msg: "Přihlášení úspěšné", 
+        user: [user], 
+        success: true
+      });
     } else {
       // Pokud uživatel neexistuje, vrátíme chybovou odpověď
       res.status(401).json({ msg: "Přihlašovací údaje zadány špatně" });
